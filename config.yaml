@@ -207,6 +207,7 @@ widgets:
       label: "{%H:%M:%S}"
       label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
+      locale: "en_US"
       calendar: 
         blur: true
         round_corners: true
