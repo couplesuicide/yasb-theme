@@ -29,7 +29,8 @@
 .yasb-bar {
     padding: 0;
     margin: 0;
-    background-color: var(--crust);
+    background-color: rgba(30, 41, 52,0.01); 
+    backdrop-filter: blur(50px);                
 }
 
 .tooltip {
@@ -128,33 +129,69 @@
     padding: 0px 2px;
 }
 .grouped-widgets .container {
-    background-color: var(--base);
+    background-color: transparent; 
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
     margin: 4px 0 4px 0;
     border-radius: 12px;
-    border: 1px solid var(--surface1);
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.grouped-widgets .container .icon {
+    text-shadow: 0 0 10px rgba(148, 226, 213, 0.5); 
+}
+.komorebi-workspaces .widget-container,
+.komorebi-active-layout .widget-container {
+  background-color: transparent;
+
+}
+
+
+.komorebi-workspaces {
+  padding: 0;
+}
+
 .komorebi-workspaces .offline-status {
-    color: var(--surface2);
-    font-size: 12px;
-    padding: 0 0 0 4px;
-    font-weight: 600;
+  color: var(--overlay0);
+  font-size: 12px;
+  padding: 0 4px;
+  font-weight: 600;
 }
+
+
 .komorebi-workspaces .ws-btn {
-    border: none;
-    background-color: transparent;
-    margin: 0 3px;
-    padding: 0;
-    font-size: 14px;
-    color: var(--surface2);
+  color: transparent;
+  width: 10px;
+  height: 10px;
+  background-color: var(--surface2);
+  border-radius: 5px;
+  margin: 0 4px;
+  font-size: 1px;
+  transition: all 0.2s ease;
 }
+
 .komorebi-workspaces .ws-btn:hover {
-    color: var(--overlay2);
+  background-color: var(--overlay2);
 }
+
+
 .komorebi-workspaces .ws-btn.populated {
-    color: var(--text);
+  width: 10px;
+  height: 10px;
+  background-color: var(--text);
+  border-radius: 5px;
+  margin: 0 4px;
+  font-size: 1px;
 }
+
+
 .komorebi-workspaces .ws-btn.active {
-    color: var(--text);
+  color: transparent;
+  background-color: #B4BEFE;
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 0 4px;
 }
 .cpu-widget .icon {
     color: var(--orange);
@@ -167,14 +204,9 @@
     color: var(--green);
 }
 .calendar {
-    
     background-color: transparent; 
-    
-    
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    
-    
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
 }
@@ -190,7 +222,6 @@
 }
 .calendar .calendar-table::item:selected {
     color: rgb(255, 255, 255);
-    
     background-color: rgba(0, 122, 204, 0.7); 
     border-radius: 12px;
 }
@@ -241,8 +272,10 @@
     width: 180px;
     height: 230px;
     border-radius: 0;
-    background-color: var(--crust);
-    color: var(--green);
+    background-color: rgba(32, 43, 56, 0.01);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: transparent;
     border-left: 4px solid rgba(58, 83, 80, 0);
     border-right: 4px solid rgba(58, 83, 80, 0);
     border-top: 4px solid rgba(58, 83, 80, 0);
@@ -283,17 +316,81 @@
     font-weight: 600;
 }
 .audio-menu {
-    background-color: var(--crust)
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 .volume-widget .icon {
     font-size: 12px;
-    color: var(--green);
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+}
+
+
+.audio-menu .system-volume-container .volume-slider {
+    border: none;
+}
+
+.audio-menu .audio-container .device {
+    background-color:transparent;
+    border: none;
+    padding:6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.audio-menu .audio-container .device.selected {
+    background-color: rgba(255, 255, 255, 0.085);
+}
+.audio-menu .audio-container .device:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.audio-menu .toggle-apps {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 24px;
+    min-width: 24px;
+    border-radius: 4px;
+}
+.audio-menu .toggle-apps.expanded {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.audio-menu .toggle-apps:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.audio-menu .apps-container {
+    padding: 8px;
+    margin-top:20px;
+    border-radius: 8px;
+    background-color:rgba(255, 255, 255, 0.062)
+}
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .language-widget .icon {
     color: var(--green);
 }
 .language-menu {
-    background-color: var(--crust);
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;;
     min-width: 300px;
 }
 .language-menu .header {
@@ -376,7 +473,7 @@
     border-radius: 4px;
 }
 .home-widget {
-    padding-right: 0;
+    padding: 0px 4px 0px 6px; 
 }
 .home-widget .icon {
     color: var(--lavender);
@@ -386,12 +483,9 @@
     color: var(--text);
 }
 .home-menu {
-    
     background-color: transparent; 
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    
-    
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
 }
@@ -403,7 +497,6 @@
     font-weight: 600;
 }
 .home-menu .menu-item:hover {
-    
     background-color: transparent;
     color: #fff;
 }
@@ -415,17 +508,12 @@
     color: var(--blue);
 }
 
-
 .media-menu {
     min-width: 360px;
     max-width: 360px;
-    
-    
     background-color:transparent; 
-    backdrop-filter: blur(10px);             
+    backdrop-filter: blur(10px);              
     -webkit-backdrop-filter: blur(10px);
-    
-    
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;                     
 }
@@ -512,7 +600,6 @@
     height: 2px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
-
 }
 .media-menu .progress-slider::groove:hover {
     background: transparent;
@@ -525,63 +612,7 @@
     border-radius: 3px;
     height: 4px;
 }
-.weather-widget .icon {
-    font-size: 14px;
-    color: var(--yellow);
-}
-.weather-card {
-    background-color: var(--crust);
-}
-.weather-card-today .label {
-    font-size: 13px;
-    font-weight: 600;
-}
-.weather-card-today .label.location {
-    font-size: 32px;
-    font-weight: 600;
-}
-.weather-card-today .label.alert {
-    font-size: 13px;
-    font-weight: 600;
-    background-color: rgba(247, 175, 42, 0.05);
-    border: 1px solid rgba(247, 209, 42, 0.1);
-    color: rgba(196, 181, 162, 0.85);
-    border-radius: 6px;
-    padding: 5px 0;
-}
-.weather-card-day {
-    border-radius: 6px;
-    background-color: var(--crust)
-}
-.weather-card-day .label {
-    font-size: 13px;
 
-}
-.weather-card-day.active {
-    background-color: rgba(40, 40, 60, 0.6);
-    border: 1px solid rgba(50, 50, 75, 1);
-}
-.weather-card-day:hover {
-    background-color: rgba(40, 40, 60, 0.6);
-}
-.weather-card .hourly-container {
-    border: none;
-    background-color: rgba(40, 40, 60, 0.0);
-    min-height: 150px;
-}
-.weather-card .hourly-data {
-    background-color: #FAE93F;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.apps-widget .label {
-    font-size: 16px;
-    padding: 0 1px;
-}
-.apps-widget .label:hover {
-    color: var(--text);
-}
 .launchpad-widget {
     background-color:transparent;
     backdrop-filter: blur(25px);
@@ -594,7 +625,6 @@
     font-size: 16px;
     color: #89b4fa;
 }
-
 
 .launchpad .context-menu {
     background-color: rgba(24, 25, 27, 0.5); 
@@ -633,7 +663,6 @@
     color: #666666;
     background-color: transparent;
 }
-
 
 .launchpad .app-dialog {
     font-family: 'Segoe UI';
@@ -755,16 +784,10 @@
     text-transform: uppercase;
 }
 .launchpad .launchpad-container {
-    
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
-    
-    
     background-color: transparent; 
-    
-    
     border: 1px solid rgba(255, 255, 255, 0.08); 
-    
     border-radius: 8px; 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); 
 }
@@ -801,164 +824,141 @@
     border: 2px solid rgba(112, 76, 32, 0);
     padding-top: 10px;
     margin: 24px 6px 6px 6px;
-    max-width: 110px;
-    min-width: 110px;
-    min-height: 110px;
-    max-height: 110px; 
-}
-.launchpad .app-icon:focus {
-    border: 2px solid #89b4fa;
-    background-color: rgba(255, 255, 255, 0.06);
-}
-.launchpad .app-icon:hover {
-    border: 2px solid #89b4fa;
-    background-color: rgba(255, 255, 255, 0.13);
-}
-.launchpad .app-icon .title {
-    color: #a6adc8;
-    font-family: 'Segoe UI';
-    font-size: 14px;
-    margin-top: 2px;
-    font-weight: 600
-}
-
-.launchpad .app-icon.url .title{
-    color: #52f1d2;
-}
-.launchpad .app-icon .icon {
-    padding: 0;
-    margin: 0
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.56); 
 }
 
 
-.launchpad .group-icon {
-    background-color: rgba(102, 10, 10, 0);
-    backdrop-filter: blur(1px);
-    border-radius: 12px;
-    border: 2px solid rgba(112, 76, 32, 0);
-    padding-top: 10px;
-    margin: 24px 6px 6px 6px;
-    max-width: 110px;
-    min-width: 110px;
-    min-height: 110px;
-    max-height: 110px;
+
+.language-widget {
+    padding: 0px 2px 0px 2px;
 }
-.launchpad .group-icon:focus {
-    border: 2px solid #89b4fa;
-    background-color: rgba(255, 255, 255, 0.06);
+.volume-widget {
+    padding: 0px 2px 0px 2px;
 }
-.launchpad .group-icon:hover {
-    border: 2px solid #89b4fa;
-    background-color: rgba(255, 255, 255, 0.13);
+.power-menu-widget {
+    padding: 0px 6px 0px 0px;
 }
-.launchpad .group-icon .group-icon-container {
-    background-color: rgb(39, 40, 43);
-    border: 1px solid rgb(47, 49, 53);
-    border-radius: 8px;
+.notification-widget {
+    padding: 0px 4px 0px 4px;
 }
-.launchpad .group-icon .title {
-    color: #a6adc8;
-    font-family: 'Segoe UI';
-    font-size: 14px;
-    margin-top: 2px;
-    font-weight: 600;
+.grouped-widgets {
+    padding: 0px 6px 0px 2px;
+}
+.taskbar-widget {
+    padding: 0px;
 }
 
 
-.launchpad .group-icon .group-icon-container.browser {
-    background-color: rgb(33, 47, 71);
-    border-color: rgb(34, 57, 94);
-}
 
 
-.launchpad .group-back-button {
-    background-color: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 18px;
-    font-family: "Segoe UI";
-    font-weight: 400;
-    text-align: left;
-    padding: 0 32px;
+.github-menu, 
+.github-popup,
+.github-notifications-menu {
+    background-color: rgba(20, 21, 26, 0.45) !important;
+    backdrop-filter: blur(30px) !important;
+    -webkit-backdrop-filter: blur(30px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
 }
-.launchpad .group-back-button:hover {
-    color: #ffffff;
-}
-.github-menu {
-    
-    background-color: transparent;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    
-    
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    
-    max-height: 500px;
-    min-height: 500px;
-    min-width: 420px;
-    overflow: hidden; 
-}
-.github-menu .header {
-    
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Segoe UI';
-    padding: 8px;
-    color: white;
-}
-.github-menu .footer {
-    
-    background-color: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 4px 8px 6px 8px;
-}
-.github-menu .footer .label{
-    font-size: 12px;
-    font-family: 'Segoe UI';
-    color: #9399b2;
-}
-.github-menu .contents {
-    
+
+.github-menu *, 
+.github-popup *,
+.github-notifications-menu * {
     background-color: transparent;
 }
-.github-menu .contents .item {
-    min-height: 40px;
-    padding: 6px 0;
-    
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+
+.github-menu QLabel[text="GitHub Notifications"] {
+    color: #ffffff !important;
+    font-size: 12pt !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    padding-bottom: 14px !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
+    margin-bottom: 10px !important;
 }
-.github-menu .contents .item:hover {
-    
-    background-color: rgba(255, 255, 255, 0.07);
-    border-bottom: 1px solid transparent;
+
+
+.github-menu QLabel[text="Pull Requests"],
+.github-menu QLabel[text="Issues"],
+.github-menu QLabel[text="Check Suites"] {
+    color: var(--lavender) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    padding-left: 6px !important;
 }
-.github-menu .contents .item .title,
-.github-menu .contents .item .description {
-    color: #9399b2;
-    font-family: Segoe UI;
+
+
+.github-menu .item,
+.github-popup .item,
+.github-menu QWidget[class*="item"] {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    margin-bottom: 2px !important;
 }
-.github-menu .contents .item .title {
-    font-size: 14px;
-    font-weight: 600; 
+
+
+.github-menu .item:hover,
+.github-popup .item:hover {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
-.github-menu .contents .item .description {
-    font-size: 12px;
-    font-weight: 500
+
+
+.github-menu .icon,
+.github-popup .icon {
+    font-size: 13px !important;
+    padding-right: 10px !important;
+    color: var(--blue) !important; 
 }
-.github-menu .contents .item.new .title,
-.github-menu .contents .item.new .description {
-    color: #ffffff
+
+.github-menu .comment-icon,
+.github-popup .comment-icon {
+    color: var(--overlay2) !important;
+    padding-left: 6px !important;
 }
-.github-menu .contents .item .icon {
-    font-size: 16px;
-    padding-right: 0;
-    padding-left: 8px;
-    padding-right: 4px;
-    color: #9399b2;
+
+
+.github-menu QLabel[text*="•"],
+.github-menu QLabel[text*="Updated"],
+.github-menu .meta-text {
+    color: var(--overlay1) !important; 
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    margin-top: 2px !important;
 }
-.github-menu .contents .item.new .icon {
-    color: #3fb950;
+
+
+github-menu .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 14px !important;
+    padding-top: 12px !important;
+    padding-bottom: 10px !important;
+}
+
+.github-menu .footer QLabel {
+    color: var(--subtext1) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+}
+
+github-menu .footer QLabel:hover {
+    color: var(--text) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+}
+.open-meteo-widget .icon {
+    color: var(--blue);  
+}
+.launchpad .app-title {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.56);
 }
